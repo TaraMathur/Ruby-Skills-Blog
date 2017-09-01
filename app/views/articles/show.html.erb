@@ -1,0 +1,13 @@
+<h1><%= @article.title %></h1>
+
+<p>
+  Written by:
+  <%= @article.user.email %>
+</p>
+ 
+<p>
+  <%= @article.text %>
+</p>
+
+
+<%= link_to 'Back to Posts', articles_path %>

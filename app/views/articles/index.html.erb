@@ -1,0 +1,26 @@
+<h1>Welcome.</h1>
+
+<br>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Post</th>
+		<th>Creation Date</th>
+		<th>Author</th>
+	</tr>
+
+	<% @articles.each do |article| %>
+		<tr>
+		<td><%= article.title %></td>
+		<td><%= link_to 'Show', article_path(article) %></td>
+		<td><%= article.created_at.strftime("%B %d, %Y") %></td>
+		<td><%= article.user.email %></td>
+	</tr>
+
+	<%end%>
+</table>
+<br>
+
+<% if (@current_user) %>
+	<%= link_to 'Add New Post',new_article_path %>
+<%end%>
